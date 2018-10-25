@@ -235,6 +235,7 @@ UNIQUE индекс нужен для обеcпечения уникальнос
 - 6 Почнинить `SpringMain, InMemory*Test`. `InMemory*Test` **должны использовать реализацию в памяти**
 - 7 Сделать индексы к таблице `Meals`: запретить создавать у одного и того-же юзера еду с одинаковой dateTime.
 Индекс на pk (id) postgres создает автоматически: <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">Postgres and Indexes on Foreign Keys and Primary Keys</a>
+  - [PostgreSQL: индексы](https://postgrespro.ru/docs/postgresql/10/indexes-intro)
   - <a href="http://postgresguide.com/performance/indexes.html">Postgres Guide: Indexes</a>
   - [Оптимизация запросов. Основы EXPLAIN в PostgreSQL](https://habrahabr.ru/post/203320/)
   - [Оптимизация запросов. Часть 2](https://habrahabr.ru/post/203386/)
