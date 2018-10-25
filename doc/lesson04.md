@@ -43,6 +43,8 @@
 - Сделайте `push` для отображения результатов текущего состояния проекта.
 
 #### **Apply 4_3_improve_code.patch**
+Для пояснения материала видео следал проверку предусловий `Objects.requireNonNull` и `Assert.notNull`. В реальном проекте везде используются один подход.
+
 > - Перенес проверки предусловий `Assert` из `InMemory` репозиториев в сервисы
 > - Добавил конфигурацию `.travis.yml`
 > - Сделал класс `Util` с новым методом `orElse` ([MealRestController.getBetween() has an NPath complexity of 625](https://app.codacy.com/app/javawebinar/topjava/issues/index?bid=6849888&filters=W3siaWQiOiJDYXRlZ29yeSIsInZhbHVlcyI6WyJFcnJvciBQcm9uZSJdfV0=))
