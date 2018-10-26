@@ -37,6 +37,7 @@
      - отключил в настройках (remove pattern) проверку assert в JUnit (проверяем через матчеры) и [`meta http-equiv="content-type"` в JSP](https://stackoverflow.com/a/45440410/548473)
      - сделал remove pattern на Cross Site Scripting ([XSS](https://ru.wikipedia.org/wiki/Межсайтовый_скриптинг)), будем делать защиту на последнем занятии
   - <a href="https://travis-ci.org/">Сборку и тесты Travis</a> (результат выполнения тестов проекта)
+     - [Что такое travis-ci.org](https://habr.com/post/140344/)
      - [Travis CI Tutorial](https://dzone.com/articles/travis-ci-tutorial-java-projects)
      - <a href="https://docs.travis-ci.com/user/languages/java/">Сборка Java проекта</a>
   - Сервис по проверке `maven` зависимостей VersionEye [закрыли](https://blog.versioneye.com/2017/10/26/the-start-of-a-new-journey). Ищу замену...
