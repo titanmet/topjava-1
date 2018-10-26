@@ -51,7 +51,7 @@
 >   - [Цикломатическая_сложность (NPath complexity)](https://ru.wikipedia.org/wiki/Цикломатическая_сложность): количество линейно независимых маршрутов через программный код.
 
 - <a href="https://ru.wikipedia.org/wiki/Контрактное_программирование">Контрактное программирование</a>, <a href="http://neerc.ifmo.ru/wiki/index.php?title=Программирование_по_контракту">Программирование по контракту</a>
-- <a href="http://www.sw-engineering-candies.com/blog-1/comparison-of-ways-to-check-preconditions-in-java">Comparison Preconditions in Java</a>
+- <a href="https://www.sw-engineering-candies.com/comparison-of-ways-to-check-preconditions-in-java">Comparison Preconditions in Java</a>
 - IDEA Settings -> Plugins -> Browse repositories... Add [QAPlug: PMD/FindBugs/Checkstyle/Hammurapi](https://qaplug.com/about/)
   - Tools -> QAPlug -> Analyze Code...
 - IDEA [Analyze | Inspect Code](https://www.jetbrains.com/help/idea/running-inspections.html)
