@@ -2,13 +2,14 @@
 
 ## <a href="https://drive.google.com/drive/folders/0B9Ye2auQ_NsFfmctT3oyNW1qaVhDb2p0bGpyTFVlaUJ2VVpOdVgtWF9KTUFBMWFaR2xVYVE">Материалы занятия</a>
 
-### Внимание!! Видео в процессе доработки. Скорее всего закончу в начале следующей недели.
+### Внимание!! Это видео в процессе доработки. Скорее всего закончу в начале следующей недели.
 ## ![correction](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) [Обзор JDK 9/11. Миграция Topjava с 1.8 на 11](http://javaops.ru/view/resources/jdk8_11)
 
 #### Apply 5_0_jdk_11.patch
 - [Добавил javax зависимости](https://stackoverflow.com/questions/48204141/replacements-for-deprecated-jpms-modules-with-java-ee-apis)
 - Сделал создание коллекций через фабричные методы `List.of`
-- Как пример в `InMemoryMealRepositoryImpl` использовал *local variable type inference* `var`. [Первый контакт с «var» в Java 10](https://habr.com/post/346214/)
+- Как пример в `InMemoryMealRepositoryImpl` использовал *local variable type inference* `var`.
+  - [Первый контакт с «var» в Java 10](https://habr.com/post/346214/)
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW4
 
@@ -33,13 +34,13 @@
 #### Apply 5_1_HW4.patch
 > - При сравнении еды тесты падают, тк Hibernate делает ленивую обертку к `user` и если происходит обращение к любому его полю кроме id вне транзакции бросается `LazyInitializationException`.
 По логике приложения поле `user` в еде не нужно и мы не будем его отдавать наружу: в тестах исключаем `user` из сравнения.
-> - В `Meal` добавил `@SuppressWarnings("JpaQlInspection")`. <a href="https://jazzy.id.au/2008/10/30/list_of_suppresswarnings_arguments.html">Other warnings</a>
+> - IDEA ругается на **BETWEEN**, в `Meal` добавил `@SuppressWarnings("JpaQlInspection")`. <a href="https://jazzy.id.au/2008/10/30/list_of_suppresswarnings_arguments.html">Other warnings</a>
 > - Поменял реализацию `JpaMealRepositoryImpl.get()` (вместо `@NamedQuery`), реализация стали проще
 
 #### Apply 5_2_fix_hibernate_issue.patch
 > - Из за [Hibernate bug with proxy initialization when using `AccessType.FIELD`](https://hibernate.atlassian.net/browse/HHH-3718)
  в `JpaMealRepositoryImpl.get()` делался дополнительный запрос в базу для инициализации прокси `User` и мы делали хак: доступ к полю `AbstractBaseEntity.id` через `AccessType.PROPERTY`.
- С версии `5.2.13.Final` загрузкой прокси при обращении к `id` управляется флагом `JPA_PROXY_COMPLIANCE`
+ С версии `5.2.13.Final` загрузкой прокси при обращении к `id` управляется флагом `JPA_PROXY_COMPLIANCE` (по умолчанию запрос не делается)
 >   - [Call to id getter initializes proxy when using AccessType( "field" ): HHH-3718](https://hibernate.atlassian.net/browse/HHH-3718)
 >   - [According to JPA, a Proxy should be loaded even when accessing the identifier: HHH-12034](https://hibernate.atlassian.net/browse/HHH-12034)
 > - <a href="http://stackoverflow.com/questions/594597/hibernate-annotations-which-is-better-field-or-property-access">Which is better, field or property access?</a>
@@ -176,7 +177,7 @@
 
 > Почему мы для InMemory не сделали отдельного профиля? Почему их не удалить вообще?
 
-Реализация InMemory является примером как в test делать моки с подменой контекста. Для них сделали отдельный `mock.xml` и запускаемый проект ничего не должен о них знать. У нас учебный проект, в котором 4 реализации репозиториев, в реальном такого не будет.
+Реализация InMemory является примером как в test делать подмену контекста. Для них сделали отдельный `inmemory.xml` и запускаемый проект ничего не должен о них знать. У нас учебный проект, в котором 4 реализации репозиториев, в реальном такого не будет.
 
 > А как делать транзакционность для реализации jdbc?
 
@@ -190,7 +191,7 @@
 - 2: Разделить реализации Repository по профилям Spring: `jdbc`, `jpa`, `datajpa` (общее в профилях можно объединять, например `<beans profile="datajpa,jpa">`). 
   - 2.1: Профили выбора DB (`postgres/hsqldb`) и реализации репозитория (`jdbc/datajpa/jpa`) независимы друг от друга и при запуске приложения (тестов) нужно задать тот и другой. 
   - 2.2: Для интеграции с IDEA не забудте выставить в `spring-db.xml` справа вверху в `Change Profiles...` профили, например `datajpa, postgres`
-  - 2.3: Общие части для всех в `spring-db.xml` можно оставить как есть без профилей вверху файла (до первого `<beans profile=` ).
+  - 2.3: Общие части для всех в `spring-db.xml` можно оставить как есть без профилей вверху файла **(до первого `<beans profile=`)!!**.
 - 3: Сделать тесты всех реализаций (`jdbc, jpa, datajpa`) через наследование (без дублирования)
   -  3.1 **сделать один базовый класс для `MealServiceTest` и `UserServiceTest`**.
   -  3.2 сводку по времени выполнения тестов также сделать для `user`
