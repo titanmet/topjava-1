@@ -1,7 +1,9 @@
 # Онлайн проекта <a href="https://github.com/JavaWebinar/topjava">Topjava</a>
 
+### ![correction](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правка
+
 #### Apply 6_0_fix.patch
-[Поменял зависимости `jaxb-runtime` для jdk11](https://medium.com/criciumadev/its-time-migrating-to-java-11-5eb3868354f9) и поправил переменную
+> [Поменял зависимости `jaxb-runtime` для jdk11](https://medium.com/criciumadev/its-time-migrating-to-java-11-5eb3868354f9) и поправил переменную
 
 ## <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFfkF5c1hiWmstT0prODdtZkVuNFlMZmdtN3J0OUcyY0lkT2NlVzlUMXRUUlk">Материалы занятия</a>
 
