@@ -278,6 +278,7 @@ Hibernate supports following open-source cache implementations out-of-the-box: E
 - 2.4 Починить тесты в `JdbcUserRepositoryImpl` (добавить роли). Доставать можно двумя способами: одним запросом с JOIN либо двумя запросами: отдельно `users` и отдельно `roles`.
   - 2.4.1 В реализации `getAll` НЕ делать запрос ролей для каждого юзера (N+1 select)
   - 2.4.2 При save посмотрите на <a href="https://www.mkyong.com/spring/spring-jdbctemplate-batchupdate-example/">batchUpdate()</a>
+- [Объяснение SQL JOIN](http://www.skillz.ru/dev/php/article-Obyasnenie_SQL_obedinenii_JOIN_INNER_OUTER.html)
 
 ---------------------
 ## ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Подсказки по HW06
