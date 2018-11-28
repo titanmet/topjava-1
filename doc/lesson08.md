@@ -13,8 +13,8 @@
 #### Apply 8_0_2_test_refactoring.patch
 
 > - Рефакторинг тестов
->  - `RootControllerTest`: вместо сравнения по полям можно использовать наш `UserTestData.assertMatch` с помощью `AssertionMatcher` адаптера. Методы сравнения по полям в `hamcrest-all` не нужны, заменил на `hamcrest-core`. 
->  - Вместо сериализации ожидаемых объектов в json и сравнение с ответом в MVC через `content().json()` красивее десериализовать ответ в объект и сравнивать уже объекты через наши `assertMatch` c учетом игнорируемых полей. `jsonassert` становится не нужен.  
+>   - `RootControllerTest`: вместо сравнения по полям можно использовать наш `UserTestData.assertMatch` с помощью `AssertionMatcher` адаптера. Методы сравнения по полям в `hamcrest-all` больше не нужны, заменил на `hamcrest-core`.
+>   - Вместо сериализации ожидаемых объектов в json и сравнение с ответом в MVC через `content().json()` красивее десериализовать ответ в объект и сравнивать уже объекты через наши `assertMatch` c учетом игнорируемых полей. `jsonassert` становится не нужен.  
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW7
 
@@ -22,7 +22,7 @@
 
 #### Apply 8_01_HW07_controller_test.patch
 > В `RootControllerTest.testMeals()` сделал проверку через `model().attribute("meals", expectedValue)`.
-  Сравнение происходит через `MealTo.equals()`, который мы можем переопределить, т.к. он TO (Transfer Object) и не является сущностью (Entity).
+  Сравнение происходит через `MealTo.equals()`, который мы можем переопределить, т.к. он Transfer Object, не является сущностью (Entity).
 ------------------
 - [Persistent classes implementing equals and hashcode](https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/4.3/html/hibernate_reference_guide/persistent_classes-implementing_equals_and_hashcode): переопределять `equals()/hashCode()` необходимо, если
   - использовать Entity в `Set` (рекомендовано для many ассоциаций), либо как ключи в `HashMap`
@@ -131,7 +131,7 @@
 >    - [Adding a Password Encoder](https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#ns-password-encoder)
 
 #### Apply 8_10_add_security.patch
-> ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) почему для `spring-security` версия не `${spring.version} (5.1.2.RELEASE)` ?
+> ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) почему для `spring-security` версия не `${spring.version}' (5.1.2.RELEASE) ?
  
 -  <a href="http://projects.spring.io/spring-security/">Spring Security</a>
 -  <a href="https://ru.wikipedia.org/wiki/Протокол_AAA">Протокол AAA</a>
