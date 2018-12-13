@@ -5,7 +5,7 @@
 ### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правка
 
 #### Apply 10_0_fix.patch
-> - Т.к. начальная страница недоступна аворизированным пользователям, если после логина перейти в браузере назад, получим 403 forbidden. Сделал ее доступным всем.
+> - Начальная страница недоступна авторизированным пользователям (только `isAnonymous()`) и если после логина перейти в браузере назад, получим "403 forbidden". Сделал ее доступным всем.
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW9
 
@@ -31,7 +31,7 @@ Datatables перевели на ajax (`"ajax": {"url": ajaxUrl, ..`), те пр
 ## Занятие 10:
 
 #### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 2. [Дополнительно: кастомизация JSON (@JsonView) и валидации (groups)](https://drive.google.com/file/d/0B9Ye2auQ_NsFRTFsTjVHR2dXczA)
-**ВНИМАНИЕ! `10_04_opt` и `10_05_opt` - не обязательные! Если будете делать- то в отдельной ветке (у меня `opt_view_groups`). Это варианты решений, которые не идут в `master`.**
+**ВНИМАНИЕ! Патчи `10_04_opt` и `10_05_opt` - не обязательные! Если будете делать- то в отдельной ветке (у меня `opt_view_groups`). Это варианты решений, которые не идут в `master`.**
 -  [Что возвращать: Entity или DTOs](https://stackoverflow.com/a/21569720/548473)
 
 #### Apply 10_04_opt_json_view.patch
@@ -85,7 +85,8 @@ Datatables перевели на ajax (`"ajax": {"url": ajaxUrl, ..`), те пр
 #### Apply 10_09_registration.patch
 
 > - Добавил локализацию
-> - При регистрации передаю `username` в `login.jsp` как параметр и делаю `setCredentials` (пароль вводится скрыто, поэтому его не передаю из соображений безопасности). Т.к `setCredentials` требует jQuery, убрал для него `defer`      
+> - При регистрации передаю `username` в `login.jsp` как параметр и делаю `setCredentials` (пароль вводится скрыто, поэтому его не передаю из соображений безопасности). Т.к `setCredentials` требует jQuery, убрал для него `defer`
+> - В `login.jsp` кнопки входа и регистрации отображаю только для `isAnonymous()`       
 > - Добавил регистрацию пользователя по REST: `ProfileRestController.register` и тест
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 7. <a href="https://drive.google.com/file/d/0B9Ye2auQ_NsFZ19lU29VVDRfNXM">Обработка исключений в Spring.</a>
@@ -114,6 +115,7 @@ Datatables перевели на ajax (`"ajax": {"url": ajaxUrl, ..`), те пр
   *  164: Collections.sort(matches, new ExceptionDepthComparator(exceptionType))
 ```
 > - В `ExceptionInfoHandler.logAndGetErrorInfo()` также использую `ValidationUtil.getRootCause`
+> - Добавил в `curl.md` пример с возвращением `ErrorInfo`. Локализация ошибок будет на последнем занятии
 
 - <a href="http://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc#errors-and-rest">Сериализация Exception в JSON</a>
 - <a href="http://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc#controller-based-exception-handling">Exception Handling на уровне контроллера</a>
