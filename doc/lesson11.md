@@ -4,7 +4,7 @@
 
 ## <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFSzlObk8tbHdtcXc">Материалы занятия</a>
 #### Некоторые темы урока новые, поэтому видео есть не везде.
-## Все материалы проекта (в том числе и будущие обновления) останутся доступны в [Google Drive](https://drive.google.com/drive/folders/0B9Ye2auQ_NsFflp6ZHBLSFI2OGVEZ2NQU0pzZkx4SnFmOWlzX0lzcDFjSi1SRk5OdzBYYkU)
+## Все материалы проекта (в том числе и будущие выпуски) останутся доступны в [Google Drive](https://drive.google.com/drive/folders/0B9Ye2auQ_NsFflp6ZHBLSFI2OGVEZ2NQU0pzZkx4SnFmOWlzX0lzcDFjSi1SRk5OdzBYYkU)
 
 ### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правка
 
@@ -135,7 +135,8 @@ Datasources advanced
 - Заполнить в [своем профиле Java Online Projects](http://javaops.ru/view/login) ссылку на резюме и информацию по поиску работы (если конечно актуально): резюме, флаги рассматриваю работу, готов к релокации и информация для HR.
 - **Обновления базы соискателей буду рассылать по HR ночью на 27.12, постарайтесь успеть**
 - Заполнить [форму проверки выпускного проекта](https://docs.google.com/forms/d/1G8cSGBfXIy9bNECo6L-tkxWQYWeVhfzR7te4b-Jwn-Q) (возможно доплатить за ревью отдельно из JavaOPs профиля, как за тестовое собеседование: 1950р)
-  - Для участников с проверкой выпускной проект принимаю на ревью до 09.01.2019 (участникам [Masterjava](http://javaops.ru/view/masterjava) до 31.03.2019).
+  - Для участников с проверкой выпускной проект принимаю на ревью до 09.01.2019
+  - Участникам [Masterjava](http://javaops.ru/view/masterjava) срок до 31.03.2019.
 - **Получить первое открытое занятие МНОГОПОТОЧНОСТЬ и пройти эту важную тему в [проекте Masterjava](http://javaops.ru/view/masterjava)**
    - Обучение на Masterjava сейчас идет в индивидуальном режиме, старт в любое время.
    - Проект, патчи, группа Slack, занятия и видео анологичны проекту Topjava. **До 23.12 цена минимальная!**
@@ -185,6 +186,7 @@ Datasources advanced
 -  <a href="http://martinfowler.com/eaaCatalog/">Catalog of Patterns of Enterprise Application Architecture</a>
 
 ## Пожалуйста <a href="http://goo.gl/forms/PtFcPqEV5n">ответь на 4-6 вопросов по проекту</a>, это важно!
+## Если проект понравился, [напиши, пожалуйста, отзыв](https://vk.com/topic-74381644_30447246?offset=120)
 
 ## ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Замечания по резюме:
 - варианты размещения: google doc + linkedin + hh + ... 
@@ -195,3 +197,5 @@ Datasources advanced
 -  если нет опыта в IT, обязательно вставь [участие в стажировке Topjava](https://github.com/JavaOPs/topjava/blob/master/cv.md#Позиционирование-проекта-topjava). Также вставь ссылку на свой сертификат (она есть в личном профиле). Весь не-IT опыт можно кратко.
 - всю выгодную для себя информацию (и важную для HR) распологайте вверху. Название секций в резюме и их порядок относительно стандартный и важный
 - **Внимание: резюме на hh или других ресурсах ДОЛЖНО БЫТЬ ОТКРЫТО ДЛЯ ПРОСМОТРА и иметь телефон для связи**
+
+## Успехов в собеседованиях и карьере Java разработчика!
