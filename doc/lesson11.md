@@ -4,14 +4,14 @@
 
 ## <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFSzlObk8tbHdtcXc">Материалы занятия</a>
 #### Некоторые темы урока новые, поэтому видео есть не везде.
-## Все материалы проекта (в том числе и будущие обновления) останутся доступны в [Google Drive](https://drive.google.com/drive/u/0/folders/1B-pqSpZ_1JJ5t3JQi8bG-rWdnTIGCjoQ).
+## Все материалы проекта (в том числе и будущие обновления) останутся доступны в [Google Drive](https://drive.google.com/drive/folders/0B9Ye2auQ_NsFflp6ZHBLSFI2OGVEZ2NQU0pzZkx4SnFmOWlzX0lzcDFjSi1SRk5OdzBYYkU)
 
 ### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правка
 
 #### Apply 11_0_fix.patch
-> - Переименовал контроллеры Ajax -> Ui
+> - переименовал контроллеры Ajax -> Ui
 > - `new ResponseEntity` переделал в билдеры
-> - Другие мелкие правки 
+> - другие мелкие правки 
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW10
 
@@ -28,7 +28,9 @@
 > - Реализавать обработку дублирования `user.email` и `meal.dateTime` можно по разному
 >   - через [поиск в сообщении `DataIntegrityViolationException` имени DB constrains](https://stackoverflow.com/a/42422568/548473)
 >   - через [Controller Based Exception Handling](https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc#controller-based-exception-handling)
->   - через [Custom Validator](https://howtodoinjava.com/spring/spring-mvc/spring-mvc-custom-validator-example/), с еще одним запросом в базу. Первый самый простой и расширяемый (хотя зависить от базы), выбрал его. Для работы с HSQLDB сделал `toLowerCase`. Самый корректный и трудоемкий с собственными валидаторами: он позволяет валидировать в конроллерах, а не при сохранении.
+>   - через [Custom Validator](https://howtodoinjava.com/spring/spring-mvc/spring-mvc-custom-validator-example/), с еще одним запросом в базу. 
+
+Первый самый простой и расширяемый (хотя зависить от базы), выбрал его. Для работы с HSQLDB сделал `toLowerCase`. Самый корректный и трудоемкий с собственными валидаторами: он позволяет валидировать в конроллерах, а не при сохранении.
 
 > - Сделал утильный класс `MessageUtil` для работы с i18n.
 > - Добавил тесты на дублирование. Отключил транзакционность в тестах на дублирование через `@Transactional(propagation = Propagation.NEVER)`.
@@ -87,7 +89,7 @@
 При опускании/поднятии приложения в heroku.com портятся коннекты в пуле и необходимо их валидировать. 
 > - При переходе на tomcat 9 в `webapp-runner-9.0.14.0.jar\META-INF\services\javax.cache.spi.CachingProvider` находится реализация провайдера Redis JCache, 
 которая берется вместо нашего ehcache провайдера: `ehcache-3.6.1.jar!\META-INF\services\javax.cache.spi.CachingProvider`. В результате приложение падает по причине отсутствия Redis JCache.
-Проблему решил в плагине `maven-dependency-plugin`: вместо `copy` использую `unpack` и `excludes`. В результате запуск приложения тоже немного меняется: вместо запуска jar запускаю распакованный `webapp.runner.launch.Main`.
+Проблему решил в плагине `maven-dependency-plugin`: вместо `copy` использую `unpack` и `excludes`. В результате запуск приложения тоже немного меняется: вместо запуска `webapp-runner.jar` запускаю распакованный класс `webapp.runner.launch.Main`.
 
 **Приложение деплоится в ROOT: [http://localhost:8080](http://localhost:8080)**
 
@@ -131,13 +133,12 @@ Datasources advanced
   - [Загрузка сайта на GitHub. Бесплатный хостинг и домен.](https://vk.com/video-58538268_456239051?list=661b165047264e7952)
   - [CSS theme for hosting your personal site, blog, or portfolio](https://mademistakes.com/work/minimal-mistakes-jekyll-theme/)
 - Заполнить в [своем профиле Java Online Projects](http://javaops.ru/view/login) ссылку на резюме и информацию по поиску работы (если конечно актуально): резюме, флаги рассматриваю работу, готов к релокации и информация для HR.
-- **Обновления базы соискателей буду рассылать по HR ночью на 20.09, постарайтесь успеть**
-- Сделать и внести в свое портфолио <a href="https://github.com/JavaWebinar/topjava/blob/doc/doc/graduation.md#graduation-project">Graduation project</a>
-  - Для участников с проверкой выпускной проект принимаю на ревью до 04.10 (участникам <a href="http://javaops.ru/reg/masterjava">Masterjava</a> до 31.12).
-- **Пройти важную тему МНОГОПОТОЧНОСТЬ по <a href="https://github.com/JavaOPs/masterjava">первому уроку Masterjava</a>.**
+- **Обновления базы соискателей буду рассылать по HR ночью на 27.12, постарайтесь успеть**
+- Заполнить [форму проверки выпускного проекта](https://docs.google.com/forms/d/1G8cSGBfXIy9bNECo6L-tkxWQYWeVhfzR7te4b-Jwn-Q) (возможно доплатить за ревью отдельно из JavaOPs профиля, как за тестовое собеседование: 1950р)
+  - Для участников с проверкой выпускной проект принимаю на ревью до 09.01.2019 (участникам [Masterjava](http://javaops.ru/view/masterjava) до 31.03.2019).
+- **Получить первое открытое занятие МНОГОПОТОЧНОСТЬ и пройти эту важную тему в [проекте Masterjava](http://javaops.ru/view/masterjava)**
    - Обучение на Masterjava сейчас идет в индивидуальном режиме, старт в любое время.
-   - Проект, патчи, группа Slack, занятия и видео анологичны проекту Topjava.
-   - **Цена для участников Topjava снижена до 17.10!**
+   - Проект, патчи, группа Slack, занятия и видео анологичны проекту Topjava. **До 23.12 цена минимальная!**
    
 ## Возможные доработки приложения:
 -  Для редактирования паролей сделать отдельный интерфейс с запросом старого пароля и кнопку сброса пароля для администратора.
