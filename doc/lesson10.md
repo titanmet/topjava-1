@@ -54,6 +54,10 @@ Datatables перевели на ajax (`"ajax": {"url": ajaxUrl, ..`), те пр
 #### Apply 10_05_persist_validate_group.patch
 - [Default Hibernate validation](https://stackoverflow.com/a/16930663/548473). Т.к.  `Persist` наследуется от `javax.validation.groups.Default`, при сохранении учитываются все непомеченные аннотации валидации (`Default`) + помеченные `Persist`.
 
+> ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png)
+При `NotNull(groups = View.Persist.class)` валидация происходит непосредственно перед созданием или редактированием на уровне репозиториев? А если бы мы установили без группы то проверка была сразу после получения с UI?
+
+Если `View` никаких нет (что равнозначно `javax.validation.groups.Default`), то бины, в которых есть аннотации валидации, проверяют Spring в контроллерах (если перед параметром стоит `@Valid`) и Hibernate перед сохранением и обновлением. Через `View` мы можем управлять валидацией. В нашем случае мы включили в `spring-db.xml` указание Hibernate валидировать поля с `View.Persist`. Так как `View.Persist` наследуется от `Default`, то Hibernate будет также валидировать и поля, на которых нет View.
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 4. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFTVZyQnBlYUtkNms">Spring Security Taglib. Method Security Expressions.</a>
 #### Apply 10_06_secure_tag_annotation.patch
